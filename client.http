@@ -1,6 +1,7 @@
+@baseUrl = http://localhost:3333
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc2Mzc2NWVjLTc3NjktNDg3Ny05ZDI5LTcyOTU2ZjBhNzM4MCIsImVtYWlsIjoic3YyQGcuY29tIiwiaWF0IjoxNzA4MTc3NDA4LCJleHAiOjE3MDgxODEwMDh9.-cEC-vb2LhyQhw_fJys_iJdoASwmQAJljjITS0KvuO8
 
-
-POST http://localhost:3333/user
+POST {{baseUrl}}/user
 Content-Type: application/json
 
 {
@@ -11,7 +12,7 @@ Content-Type: application/json
 
 ###
 
-POST http://localhost:3333/auth
+POST {{baseUrl}}/auth
 Content-Type: application/json
 
 {
@@ -22,6 +23,49 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:3333/user/me
+GET {{baseUrl}}/user/me
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMzOGMyNGE4LTBmYmYtNDliMi1hNDM4LTFjMzc2YjgxMmUwNCIsImVtYWlsIjoic3YzQGcuY29tIiwiaWF0IjoxNzA2OTcyMjM5LCJleHAiOjE3MDY5NzU4Mzl9.pXFw68pJAUO5CsUqwjLSc6sVbZ9y-y96C9PFFYqmCQ0
+Authorization: Bearer {{authToken}}
+
+###
+
+POST {{baseUrl}}/question
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+{
+  "question":"Como sab"
+}
+
+###
+
+GET {{baseUrl}}/question/9e1177e3-a4ab-4ea9-8232-c49ea6f2c560
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+###
+
+GET {{baseUrl}}/question/user
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+###
+
+GET {{baseUrl}}/question/all
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+###
+
+PUT {{baseUrl}}/question/9e1177e3-a4ab-4ea9-8232-c49ea6f2c560
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+{
+  "question":"Como saber atualizar questão"
+}
+###
+
+DELETE  {{baseUrl}}/question/9e1177e3-a4ab-4ea9-8232-c49ea6f2c560
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
