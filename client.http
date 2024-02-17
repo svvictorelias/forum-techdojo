@@ -1,0 +1,27 @@
+
+
+POST http://localhost:3333/user
+Content-Type: application/json
+
+{
+  "name":"Victor 3",
+  "email":"sv3@g.com",
+  "password":"12345"
+}
+
+###
+
+POST http://localhost:3333/auth
+Content-Type: application/json
+
+{
+  "email":"sv2@g.com",
+  "password":"1234"
+}
+
+
+###
+
+GET http://localhost:3333/user/me
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMzOGMyNGE4LTBmYmYtNDliMi1hNDM4LTFjMzc2YjgxMmUwNCIsImVtYWlsIjoic3YzQGcuY29tIiwiaWF0IjoxNzA2OTcyMjM5LCJleHAiOjE3MDY5NzU4Mzl9.pXFw68pJAUO5CsUqwjLSc6sVbZ9y-y96C9PFFYqmCQ0
