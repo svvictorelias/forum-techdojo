@@ -1,5 +1,5 @@
 @baseUrl = http://localhost:3333
-@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc2Mzc2NWVjLTc3NjktNDg3Ny05ZDI5LTcyOTU2ZjBhNzM4MCIsImVtYWlsIjoic3YyQGcuY29tIiwiaWF0IjoxNzA4MTc3NDA4LCJleHAiOjE3MDgxODEwMDh9.-cEC-vb2LhyQhw_fJys_iJdoASwmQAJljjITS0KvuO8
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc2Mzc2NWVjLTc3NjktNDg3Ny05ZDI5LTcyOTU2ZjBhNzM4MCIsImVtYWlsIjoic3YyQGcuY29tIiwiaWF0IjoxNzA4MTgyNTEzLCJleHAiOjE3MDgxODYxMTN9.MdMqgokxK_WrcGstwqjMFJTwsTklsr0W3gIq9o2hN3o
 
 POST {{baseUrl}}/user
 Content-Type: application/json
@@ -34,7 +34,7 @@ Content-Type: application/json
 Authorization: Bearer {{authToken}}
 
 {
-  "question":"Como sab"
+  "question":"Como curtir a questão"
 }
 
 ###
@@ -66,6 +66,18 @@ Authorization: Bearer {{authToken}}
 }
 ###
 
-DELETE  {{baseUrl}}/question/9e1177e3-a4ab-4ea9-8232-c49ea6f2c560
+DELETE  {{baseUrl}}/question/b0e313e4-644f-434a-9eb7-9374c25a8ead
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+###
+
+POST  {{baseUrl}}/like/question/b0e313e4-644f-434a-9eb7-9374c25a8ead
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+###
+
+DELETE   {{baseUrl}}/like/7cc9f801-5af0-443c-9b95-8591bb0f6a15
 Content-Type: application/json
 Authorization: Bearer {{authToken}}

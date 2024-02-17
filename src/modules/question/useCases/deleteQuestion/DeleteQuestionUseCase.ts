@@ -1,3 +1,4 @@
+import { ILikeRepository } from '@modules/like/infra/repositories/ILikeRepository'
 import { IQuestionRepository } from '@modules/question/infra/repositories/IQuestionRepository'
 import { CustomError } from '@shared/error/CustomError'
 import { inject, injectable } from 'tsyringe'
@@ -6,7 +7,9 @@ import { inject, injectable } from 'tsyringe'
 class DeleteQuestionUseCase {
   constructor(
     @inject('QuestionRepository')
-    private readonly questionRepository: IQuestionRepository
+    private readonly questionRepository: IQuestionRepository,
+    @inject('LikeRepository')
+    private readonly likeRepository: ILikeRepository
   ) {}
 
   async execute(id: string, idUser: string): Promise<void> {
@@ -21,6 +24,8 @@ class DeleteQuestionUseCase {
     }
 
     await this.questionRepository.delete(id)
+
+    await this.likeRepository.deleteMany(id)
   }
 }
 
