@@ -1,5 +1,5 @@
 @baseUrl = http://localhost:3333
-@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc2Mzc2NWVjLTc3NjktNDg3Ny05ZDI5LTcyOTU2ZjBhNzM4MCIsImVtYWlsIjoic3YyQGcuY29tIiwiaWF0IjoxNzA4MTgyNTEzLCJleHAiOjE3MDgxODYxMTN9.MdMqgokxK_WrcGstwqjMFJTwsTklsr0W3gIq9o2hN3o
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc2Mzc2NWVjLTc3NjktNDg3Ny05ZDI5LTcyOTU2ZjBhNzM4MCIsImVtYWlsIjoic3Z2QHYuY29tIiwiaWF0IjoxNzA5MzgzODk4LCJleHAiOjE3MDkzODc0OTh9.Nw1iSnYKhR4gzWbcklC-9hoMgxPBHZfLzmFcAurXhu0
 
 POST {{baseUrl}}/user
 Content-Type: application/json
@@ -16,7 +16,7 @@ POST {{baseUrl}}/auth
 Content-Type: application/json
 
 {
-  "email":"sv2@g.com",
+  "email":"svv@v.com",
   "password":"1234"
 }
 
@@ -26,6 +26,27 @@ Content-Type: application/json
 GET {{baseUrl}}/user/me
 Content-Type: application/json
 Authorization: Bearer {{authToken}}
+
+###
+
+PUT {{baseUrl}}/user/me
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+{
+  "email":"svv@v.com"
+}
+
+###
+
+PATCH  {{baseUrl}}/user/me/password
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+{
+  "password":"12345",
+  "newPassword":"1234"
+}
 
 ###
 
