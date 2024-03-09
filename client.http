@@ -1,5 +1,5 @@
 @baseUrl = http://localhost:3333
-@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc2Mzc2NWVjLTc3NjktNDg3Ny05ZDI5LTcyOTU2ZjBhNzM4MCIsImVtYWlsIjoic3Z2QHYuY29tIiwiaWF0IjoxNzA5MzgzODk4LCJleHAiOjE3MDkzODc0OTh9.Nw1iSnYKhR4gzWbcklC-9hoMgxPBHZfLzmFcAurXhu0
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA0NmFmNTE0LTg4ZTgtNDcyNS04OGU1LTNiZjU1N2JlZDVkNCIsImVtYWlsIjoidGVzdGVVbkBnZy5jb20iLCJpYXQiOjE3MDk0MDI4NzIsImV4cCI6MTcwOTQwNjQ3Mn0._pWumLp0XV6lv9Px8iLpiyic6fSFeNHZ16PijrS7-60
 
 POST {{baseUrl}}/user
 Content-Type: application/json
@@ -16,8 +16,8 @@ POST {{baseUrl}}/auth
 Content-Type: application/json
 
 {
-  "email":"svv@v.com",
-  "password":"1234"
+  "email":"testeUn@gg.com",
+  "password":"Test123"
 }
 
 
@@ -44,7 +44,7 @@ Content-Type: application/json
 Authorization: Bearer {{authToken}}
 
 {
-  "password":"12345",
+  "password":"Test123",
   "newPassword":"1234"
 }
 

@@ -17,11 +17,13 @@ class UpdateUserPasswordUseCase {
     id,
   }: IUserUpdatePasswordDTO): Promise<void> {
     const user = await this.userRepository.findById(id)
+
     const passwordMatch = await compare(password, user.password)
     if (!passwordMatch) {
       throw new CustomError('Password not match', 401)
     }
     const hashPassword = await hash(newPassword, 8)
+
     return await this.userRepository.update({ password: hashPassword, id })
   }
 }
